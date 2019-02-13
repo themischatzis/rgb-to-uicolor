@@ -25,4 +25,10 @@ describe("rgbToUIColor", function() {
 
     expect(() => rgbToUIColor(rgbColor)).toThrowError("RGB color is missing either r or g or b.")
   });
+
+  it('should fail when passing a string', function() {
+    const rgbColor = "test";
+
+    expect(() => rgbToUIColor(rgbColor)).toThrowError("RGB color should not be a string.")
+  });
 });

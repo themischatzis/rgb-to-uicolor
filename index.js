@@ -3,6 +3,10 @@ function formatNumber(value) {
 }
 
 var rgbToUIColor = function (rgbColor) {
+  if (typeof rgbColor === 'string' || rgbColor instanceof String) {
+    throw new Error('RGB color should not be a string.');
+  }
+
   if (!rgbColor.r || !rgbColor.g || !rgbColor.b) {
     throw new Error('RGB color is missing either r or g or b.');
   }
