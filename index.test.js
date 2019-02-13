@@ -16,4 +16,13 @@ describe("rgbToUIColor", function() {
       b: "0.30"
     })
   });
+
+  it('should fail when r is not defined', function() {
+    const rgbColor = {
+      g: 43,
+      b: 76
+    };
+
+    expect(() => rgbToUIColor(rgbColor)).toThrowError("RGB color is missing either r or g or b.")
+  });
 });
