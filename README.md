@@ -1,6 +1,6 @@
 ### rgb-to-uicolor
 
-Convert RGB(A) color to UIColor
+Convert RGB color to UIColor
 
 ### Install
 
