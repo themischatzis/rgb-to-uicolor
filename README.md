@@ -1,14 +1,16 @@
-### rgb-to-uicolor
+# rgb-to-uicolor (https://github.com/thchatzis/rgb-to-uicolor)
 
-Convert RGB color to UIColor
+> Convert RGB color to UIColor
 
-### Install
+## Install
 
-`npm install --save rgb-to-uicolor`
+```
+npm install --save rgb-to-uicolor
+```
 
-### Usage
+## Usage
 
-```sh
+```js
 import {rgbToUIColor}  from 'rgb-to-uicolor';
 
 let rgbColor = {
