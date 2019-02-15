@@ -1,54 +1,44 @@
 class RGBtoUIColor {
   constructor(rgbColor) {
-    this.state = {
-      rgbColor: {}
-    }
-    this.rgbColor = rgbColor;
-    this.rgbToUIColor = this.rgbToUIColor.bind(this);
-
-
-  }
-  
-  convertToObjectiveC(rgbColor) {
-    this.rgbToUIColor(rgbColor)
-    return `[UIColor colorWithRed:${this.formatNumber(this.rgbColor.r)} green:${this.formatNumber(this.rgbColor.g)} blue:${this.formatNumber(this.rgbColor.b)} alpha:1.0];`
-    ;
-  }
-
-  convertToSwift() {
-    this.rgbToUIColor(rgbColor)
-    return `UIColor(red:${this.rgbColor.r}, green:${this.rgbColor.g}, blue:${this.rgbColor.b}, alpha:1.0)`
-    ;
-  }
-
-  convertToXamarin() {
-    this.rgbToUIColor(rgbColor)
-    return `new UIColor(red:${this.rgbColor.r}f, green:${this.rgbColor.g}f, blue:${this.rgbColor.b}f, alpha:1.0)`
-    ;
+    this.uiColor = this.rgbToUIColor(rgbColor);
   }
 
   formatNumber(value) {
     return (value / 255).toFixed(2);
   }
   
-
   rgbToUIColor(rgbColor) {
-
-    if (typeof this.rgbColor === 'string' || this.rgbColor instanceof String) {
+    if (typeof rgbColor === 'string' || rgbColor instanceof String) {
       throw new Error('RGB color should not be a string.');
     }
   
-    if (!this.rgbColor.r || !this.rgbColor.g || !this.rgbColor.b) {
+    if (!rgbColor.r || !rgbColor.g || !rgbColor.b) {
       
       throw new Error('RGB color is missing either r or g or b.');
     }
   
     return {
-      r: this.formatNumber(this.rgbColor.r),
-      g: this.formatNumber(this.rgbColor.g),
-      b: this.formatNumber(this.rgbColor.b),
+      r: this.formatNumber(rgbColor.r),
+      g: this.formatNumber(rgbColor.g),
+      b: this.formatNumber(rgbColor.b),
     };
   }
+
+  convertToObjectiveC() {
+    return `[UIColor colorWithRed:${this.uiColor.r} green:${this.uiColor.g} blue:${this.uiColor.b} alpha:1.0];`
+    ;
+  }
+
+  convertToSwift() {
+    return `UIColor(red:${this.uiColor.r}, green:${this.uiColor.g}, blue:${this.uiColor.b}, alpha:1.0)`
+    ;
+  }
+
+  convertToXamarin() {
+    return `new UIColor(red:${this.uiColor.r}f, green:${this.uiColor.g}f, blue:${this.uiColor.b}f, alpha:1.0)`
+    ;
+  }
+
 }
 
 module.exports = RGBtoUIColor;
