@@ -1,4 +1,4 @@
-# rgb-to-uicolor [!(https://github.com/thchatzis/rgb-to-uicolor)]
+# rgb-to-uicolor
 
 > Convert RGB color to UIColor
 
