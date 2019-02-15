@@ -1,25 +1,29 @@
 {
   "name": "rgb-to-uicolor",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Convert RGB color to UIColor",
   "license": "ISC",
-  "repository": "https://github.com/thchatzis/rgb-to-uicolor",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thchatzis/rgb-to-uicolor.git"
+  },
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+  "test": "jest"
   },
   "author": {
-		"name": "Themistoklis Chatzis",
+    "name": "Themistoklis Chatzis",
     "email": "chatzis.themis@gmail.com",
     "url": "https://github.com/thchatzis"
-	},
+  },
+  "homepage": "https://github.com/thchatzis/rgb-to-uicolor",
   "keywords": [
-		"rgb",
-		"uicolor",
-		"color",
-		"colour",
-		"convert",
-		"conversion",
+    "rgb",
+    "uicolor",
+    "color",
+    "colour",
+    "convert",
+    "conversion",
     "converter"
   ],
   "devDependencies": {
